@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuitVeicular - Quitação com Desconto</title>
+    <meta name="description" content="A maior corretora de quitação veicular do Brasil. Economize até 70% na quitação do seu financiamento.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/lucide@latest/dist/umd/lucide.js" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">H</div>
+                    <span class="logo-text">Quite Veicular</span>
+                </div>
+                
+                <nav class="nav desktop-nav">
+                    <a href="#home">Início</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#simulator">Simulador</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+                
+                <div class="header-actions desktop-actions">
+                    <a href="https://wa.link/v4p00p" class="btn btn-outline">
+                        <i data-lucide="file-text"></i>
+                        2ª Via Boleto
+                    </a>
+                    <a href="https://wa.link/v4p00p" class="btn btn-primary">
+                        <i data-lucide="phone"></i>
+                        Atendimento
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#home">Início</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#simulator">Simulador</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+                <div class="mobile-actions">
+                    <a href="https://wa.link/v4p00p" class="btn btn-outline">
+                        <i data-lucide="file-text"></i>
+                        2ª Via Boleto
+                    </a>
+                    <a href="https://wa.link/v4p00p" class="btn btn-primary">
+                        <i data-lucide="phone"></i>
+                        Atendimento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <i data-lucide="award"></i>
+                        Mais de 10 anos no mercado
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Quite seu
+                        <span class="hero-highlight">Veículo</span>
+                        <span class="hero-subtitle">com Desconto</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        A maior e mais confiável corretora de quitação veicular do Brasil. 
+                        Processos 100% seguros e transparentes com garantia de aprovação.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <a href="https://wa.link/v4p00p" class="btn btn-primary btn-lg">
+                            <i data-lucide="calculator"></i>
+                            Simular Desconto Agora
+                        </a>
+                        <a href="https://wa.link/v4p00p" class="btn btn-outline btn-lg">
+                            Falar com Especialista
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i data-lucide="users"></i>
+                            <span class="stat-number">50k+</span>
+                            <span class="stat-label">Clientes Satisfeitos</span>
+                        </div>
+                        <div class="stat-card">
+                            <i data-lucide="trending-up"></i>
+                            <span class="stat-number">R$ 120M</span>
+                            <span class="stat-label">Economizados</span>
+                        </div>
+                        <div class="stat-card">
+                            <i data-lucide="shield"></i>
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Taxa Aprovação</span>
+                        </div>
+                        <div class="stat-card">
+                            <i data-lucide="clock"></i>
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">Aprovação Rápida</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nossos Serviços</h2>
+                <p class="section-description">
+                    Oferecemos soluções completas para quitação veicular com as melhores condições do mercado
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" onclick="openWhatsApp('Quitação com Desconto')">
+                    <div class="service-icon blue">
+                        <i data-lucide="calculator"></i>
+                    </div>
+                    <h3>Quitação com Desconto</h3>
+                    <p>Negocie seu financiamento com desconto de até 5% do valor total.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('2ª Via de Boleto')">
+                    <div class="service-icon green">
+                        <i data-lucide="file-text"></i>
+                    </div>
+                    <h3>2ª Via de Boleto</h3>
+                    <p>Emita rapidamente a segunda via do seu boleto online.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Atendimento WhatsApp')">
+                    <div class="service-icon purple">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <h3>Atendimento WhatsApp</h3>
+                    <p>Atendimento personalizado direto pelo WhatsApp.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Antecipação de Parcela')">
+                    <div class="service-icon red">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3>Antecipação de Parcela</h3>
+                    <p>Toda negociação é feita de forma 100% segura e legal.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Aprovação Rápida')">
+                    <div class="service-icon yellow">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3>Aprovação Rápida</h3>
+                    <p>Análise e aprovação em até 24 horas úteis.</p>
+                </div>
+                <div class="service-card" onclick="openWhatsApp('Garantia Total')">
+                    <div class="service-icon indigo">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                    <h3>Garantia Total</h3>
+                    <p>Garantimos o melhor desconto possível para seu caso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-lucide="shield"></i>
+                    Confiança e Segurança
+                </div>
+                <h2 class="section-title">Sua Segurança é Nossa Prioridade</h2>
+                <p class="section-description">
+                    Operamos com total transparência e segurança, seguindo todas as regulamentações do mercado financeiro
+                </p>
+            </div>
+            
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <h3>Empresa Certificada</h3>
+                    <p>Certificações de segurança e qualidade</p>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3>Prêmios do Setor</h3>
+                    <p>Reconhecimento por excelência</p>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i data-lucide="building"></i>
+                    </div>
+                    <h3>Registro CNPJ</h3>
+                    <p>Empresa regulamentada</p>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i data-lucide="lock"></i>
+                    </div>
+                    <h3>Dados Protegidos</h3>
+                    <p>Criptografia de ponta a ponta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-lucide="check-circle"></i>
+                    Processo Simples e Transparente
+                </div>
+                <h2 class="section-title">Como Funciona a Quitação</h2>
+                <p class="section-description">
+                    Em apenas 4 passos simples, você pode quitar seu financiamento com até 70% de desconto
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-icon blue">
+                        <i data-lucide="file-search"></i>
+                    </div>
+                    <div class="step-number">01</div>
+                    <h3>Análise Gratuita</h3>
+                    <p>Analisamos seu contrato e situação financeira sem custo</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon green">
+                        <i data-lucide="calculator"></i>
+                    </div>
+                    <div class="step-number">02</div>
+                    <h3>Simulação Personalizada</h3>
+                    <p>Calculamos o melhor desconto possível para seu caso</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon purple">
+                        <i data-lucide="handshake"></i>
+                    </div>
+                    <div class="step-number">03</div>
+                    <h3>Negociação</h3>
+                    <p>Negociamos diretamente com o banco para conseguir o melhor acordo</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon orange">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                    <div class="step-number">04</div>
+                    <h3>Quitação</h3>
+                    <p>Você recebe o boleto com desconto e quita seu financiamento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulator Section -->
+    <section id="simulator" class="simulator-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simulador de Quitação</h2>
+                <p class="section-description">
+                    Descubra quanto você pode economizar na quitação do seu financiamento
+                </p>
+            </div>
+            
+            <div class="simulator-container">
+                <div class="simulator-form">
+                    <div class="form-header">
+                        <i data-lucide="calculator"></i>
+                        <h3>Faça sua Simulação</h3>
+                    </div>
+                    
+                    <form id="simulatorForm">
+                        <div class="form-group">
+                            <label>Nome</label>
+                            <input type="text" id="name" placeholder="Seu nome completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>CPF/CNPJ</label>
+                            <input type="text" id="cpfCnpj" placeholder="000.000.000-00" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Valor</label>
+                            <input type="text" id="value" placeholder="R$ 0,00" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Opções</label>
+                            <select id="service" required>
+                                <option value="">Selecione uma opção</option>
+                                <option value="2via">2ª via de boleto</option>
+                                <option value="antecipacao">Antecipação de parcelas</option>
+                                <option value="atendimento">Atendimento</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i data-lucide="calculator"></i>
+                            Simular Desconto
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="simulator-result" id="simulatorResult">
+                    <div class="result-placeholder">
+                        <i data-lucide="calculator"></i>
+                        <h3>Faça sua simulação</h3>
+                        <p>Preencha os dados ao lado para ver quanto você pode economizar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Por que escolher?</h2>
+                <p class="section-description">
+                    Somos a maior e mais confiável corretora de quitação veicular do Brasil
+                </p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="check-circle"></i>
+                    </div>
+                    <div class="benefit-badge">98% Aprovação</div>
+                    <h3>Aprovação Garantida</h3>
+                    <p>Nossa taxa de aprovação é de 98% para todos os casos analisados</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="star"></i>
+                    </div>
+                    <div class="benefit-badge">Até 70% OFF</div>
+                    <h3>Melhor Desconto</h3>
+                    <p>Garantimos o maior desconto possível ou devolvemos seu dinheiro</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="benefit-badge">50.000+ Clientes</div>
+                    <h3>50k+ Clientes</h3>
+                    <p>Mais de 50 mil famílias já quitaram seus financiamentos conosco</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i data-lucide="shield"></i>
+                    </div>
+                    <div class="benefit-badge">100% Seguro</div>
+                    <h3>Totalmente Seguro</h3>
+                    <p>Processo 100% legal e seguro, com garantia total</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i data-lucide="star"></i>
+                    Depoimentos Reais
+                </div>
+                <h2 class="section-title">O que Nossos Clientes Dizem</h2>
+                <p class="section-description">
+                    Mais de 50.000 famílias já economizaram milhões com nossos serviços
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <p>"Economizei R$ 28.500 na quitação do meu financiamento! O atendimento foi excepcional e o processo muito transparente."</p>
+                    <div class="testimonial-savings">Economizou R$ 28.500</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MS</div>
+                        <div class="author-info">
+                            <h4>Maria Santos</h4>
+                            <p>Empresária - São Paulo - SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <p>"Incrível como conseguiram 65% de desconto. Em apenas 3 dias estava com meu carro quitado. Equipe muito profissional!"</p>
+                    <div class="testimonial-savings">Economizou R$ 35.200</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div class="author-info">
+                            <h4>João Silva</h4>
+                            <p>Engenheiro - Rio de Janeiro - RJ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                        <i data-lucide="star"></i>
+                    </div>
+                    <p>"Processo super rápido e seguro. Tirou todas minhas dúvidas pelo WhatsApp. Realmente cumpriram tudo que prometeram."</p>
+                    <div class="testimonial-savings">Economizou R$ 19.800</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AC</div>
+                        <div class="author-info">
+                            <h4>Ana Costa</h4>
+                            <p>Advogada - Belo Horizonte - MG</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Fale Conosco</h2>
+                <p class="section-description">
+                    Entre em contato e descubra como podemos ajudar você a economizar
+                </p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-image">
+                    <img src="img/img-banner.png" alt="Atendimento">
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <i data-lucide="phone"></i>
+                            <h4>Telefone</h4>
+                            <p>11 5192-4444</p>
+                            <span>Ligue agora mesmo</span>
+                        </div>
+                        <div class="contact-card">
+                            <i data-lucide="mail"></i>
+                            <h4>E-mail</h4>
+                            <p>contato@consulauditoria.comr</p>
+                            <span>Resposta em até 2h</span>
+                        </div>
+                        <div class="contact-card">
+                            <i data-lucide="clock"></i>
+                            <h4>Horário</h4>
+                            <p>Seg à Sex: 8h às 18h</p>
+                        </div>
+                        <div class="contact-card">
+                            <i data-lucide="map-pin"></i>
+                            <h4>Localização</h4>
+                            <p>São Paulo - SP</p>
+                            <span>Atendimento nacional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">H</div>
+                        <span class="logo-text">Atendimento</span>
+                    </div>
+                    <p>A maior corretora de quitação veicular do Brasil. Ajudamos você a economizar até 70% na quitação do seu financiamento.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#">Quitação com Desconto</a></li>
+                        <li><a href="#">2ª Via de Boleto</a></li>
+                        <li><a href="#">Atendimento WhatsApp</a></li>
+                        <li><a href="#">Consultoria Especializada</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#simulator">Simulador</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <p>11 5192-4444</p>
+                            <span>WhatsApp</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <p>contato@consulauditoria.com</p>
+                            <span>Resposta em até 2h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 consulauditoria.com. Todos os direitos reservados.</p>
+                <p>CNPJ: 04.962.103/0001-93</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-button" id="whatsappButton">
+        <button onclick="openWhatsApp('Atendimento')">
+            <i data-lucide="phone"></i>
+        </button>
+        <div class="tooltip" id="whatsappTooltip">
+            <button class="tooltip-close" onclick="closeTooltip()">&times;</button>
+            <p>👋 <strong>Olá!</strong> Precisa de ajuda com quitação veicular? Clique aqui e fale conosco no WhatsApp!</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
