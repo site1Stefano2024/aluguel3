@@ -1,689 +1,509 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COLEFAR LTDA</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #e74c3c;
-            --light-color: #ecf0f1;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-        }
-
-        .navbar {
-            background-color: var(--primary-color) !important;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .service-card {
-            border: none;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        .bg-light-gray {
-            background-color: #f8f9fa;
-        }
-
-        .contact-info {
-            margin-bottom: 30px;
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
-
-        .btn-primary {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-
-        .btn-primary:hover {
-            background-color: #c0392b;
-            border-color: #c0392b;
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 0;
-        }
-
-        .social-icon {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .social-icon:hover {
-            color: var(--secondary-color);
-        }
-
-        .testimonial-card {
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .map-container {
-            height: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .highlight-box {
-            background-color: var(--light-color);
-            border-left: 5px solid var(--secondary-color);
-            padding: 20px;
-            margin: 20px 0;
-        }
-    </style>
+    <title>Quitação Veicular - Resolva sua dívida veicular de forma rápida e segura</title>
+    <meta name="description" content="Especialistas em negociação e quitação de veículos com as melhores condições do mercado">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <!-- Header -->
+    <header class="header">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-car me-2"></i>COLEFAR LTDA - Despachante
+            <a href="#" class="logo">
+                <span class="logo-text">Quitação Veicular</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <nav class="nav-desktop">
+                <a href="#inicio" class="nav-link">Início</a>
+                <a href="#sobre" class="nav-link">Sobre a Quitação</a>
+                <a href="#como-funciona" class="nav-link">Como Funciona</a>
+                <a href="#beneficios" class="nav-link">Benefícios</a>
+                <a href="#depoimentos" class="nav-link">Depoimentos</a>
+                <a href="#contato" class="nav-link">Contato</a>
+                <a href="#contato" class="cta-button">Solicitar Quitação</a>
+            </nav>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg width="28" height="28" fill="none" stroke="#002850" stroke-width="2">
+                    <rect x="5" y="7" width="18" height="2" rx="1"/>
+                    <rect x="5" y="15" width="18" height="2" rx="1"/>
+                </svg>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contato</a>
-                    </li>
-                </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#inicio" class="mobile-nav-link" onclick="closeMobileMenu()">Início</a>
+                    <a href="#sobre" class="mobile-nav-link" onclick="closeMobileMenu()">Sobre a Quitação</a>
+                    <a href="#como-funciona" class="mobile-nav-link" onclick="closeMobileMenu()">Como Funciona</a>
+                    <a href="#beneficios" class="mobile-nav-link" onclick="closeMobileMenu()">Benefícios</a>
+                    <a href="#depoimentos" class="mobile-nav-link" onclick="closeMobileMenu()">Depoimentos</a>
+                    <a href="#contato" class="mobile-nav-link" onclick="closeMobileMenu()">Contato</a>
+                    <a href="#contato" class="mobile-cta-button" onclick="closeMobileMenu()">Solicitar Quitação</a>
+                </nav>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Despachante Veicular Profissional</h1>
-            <p class="lead mb-5">Soluções rápidas e seguras para todas as suas necessidades veiculares</p>
-            <a href="#contact" class="btn btn-primary btn-lg px-4 me-2">
-                <i class="fas fa-phone-alt me-2"></i>Fale Conosco
-            </a>
-            <a href="https://wa.me/5511975877100" target="_blank" class="btn btn-light btn-lg px-4">
-                <i class="fab fa-whatsapp me-2"></i>WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Nossos Serviços</h2>
-                <p class="lead text-muted">Oferecemos soluções completas para seu veículo</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
-                            <h4 class="card-title">Licenciamento</h4>
-                            <p class="card-text">Regularização anual do seu veículo de forma rápida e sem complicações.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-exchange-alt"></i>
-                            </div>
-                            <h4 class="card-title">Transferência</h4>
-                            <p class="card-text">Regularização de compra e venda de veículos com toda segurança
-                                jurídica.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-car-crash"></i>
-                            </div>
-                            <h4 class="card-title">Multas</h4>
-                            <p class="card-text">Consultas e recursos de multas de trânsito para manter seu nome limpo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-id-card"></i>
-                            </div>
-                            <h4 class="card-title">CNH</h4>
-                            <p class="card-text">Primeira habilitação, renovação e demais serviços relacionados à CNH.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-key"></i>
-                            </div>
-                            <h4 class="card-title">Financiamento</h4>
-                            <p class="card-text">Assessoria completa para financiamento e refinanciamento veicular.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card service-card h-100">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon">
-                                <i class="fas fa-truck-pickup"></i>
-                            </div>
-                            <h4 class="card-title">Documentos</h4>
-                            <p class="card-text">Segunda via de documentos veiculares e demais certidões necessárias.
-                            </p>
-                        </div>
-                    </div>
+    <main>
+        <!-- Hero Banner -->
+        <section id="inicio" class="hero-banner">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Resolva sua dívida veicular <span class="accent-text">de forma rápida e segura!</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Especialistas em negociação e quitação de veículos com as melhores condições do mercado.
+                    </p>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="hero-cta">
+                        Simular Quitação no WhatsApp
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light-gray">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="https://images.unsplash.com/photo-1581093196276-63559b5a3a8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                        alt="Despachante veicular" class="img-fluid rounded shadow">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="fw-bold mb-4">Sobre Nós</h2>
-                    <p class="lead">COLEFAR LTDA - Despachante Veicular é uma empresa especializada em serviços de
-                        despachante veicular, oferecendo soluções rápidas, seguras e com transparência para seus
-                        clientes.</p>
-
-                    <div class="highlight-box">
-                        <h4><i class="fas fa-check-circle text-success me-2"></i>Por que escolher nossos serviços?</h4>
-                        <ul class="mt-3">
-                            <li>Atendimento personalizado e humanizado</li>
-                            <li>Agilidade nos processos burocráticos</li>
-                            <li>Transparência em todas as etapas</li>
-                            <li>Preços justos e competitivos</li>
-                            <li>Experiência e conhecimento técnico</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="fas fa-calendar-check contact-icon"></i>
-                            <div>
-                                <h5 class="mb-0">Horário de Atendimento</h5>
-                                <p class="mb-0">Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
-                            </div>
+        <!-- Benefits -->
+        <section id="beneficios" class="benefits-section">
+            <div class="container">
+                <h2 class="section-title">Benefícios em quitar seu veículo</h2>
+                <div class="benefits-grid">
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 13l3 3 7-7"/>
+                            </svg>
                         </div>
+                        <h3 class="benefit-title">Redução de juros abusivos</h3>
+                        <p class="benefit-description">Negociamos para você a redução de taxas e eliminação de juros indevidos.</p>
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="m22 21-3-3"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Negociação com bancos e financeiras</h3>
+                        <p class="benefit-description">Nossa equipe lida diretamente com bancos para facilitar sua vida.</p>
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Liberação de gravame</h3>
+                        <p class="benefit-description">Veículo 100% quitado e regularizado, pronto para transferência.</p>
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12,6 12,12 16,14"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Documentação regularizada rapidamente</h3>
+                        <p class="benefit-description">Rapidez e segurança em todo o processo documental.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="como-funciona" class="how-it-works-section">
+            <div class="container">
+                <h2 class="section-title">Como funciona o processo</h2>
+                <div class="steps-grid">
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="step-card">
+                        <div class="step-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M7 13l3 3 7-7"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">01. Análise gratuita da dívida</h3>
+                        <p class="step-description">Enviando seus dados, realizamos uma análise detalhada e sem compromisso.</p>
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="step-card">
+                        <div class="step-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="m22 21-3-3"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">02. Negociação personalizada</h3>
+                        <p class="step-description">Buscamos as melhores condições junto ao seu banco ou financeira.</p>
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="step-card">
+                        <div class="step-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">03. Quitação com garantia</h3>
+                        <p class="step-description">Você recebe o documento de quitação com toda a segurança exigida por lei.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlight Section -->
+        <section class="highlight-section">
+            <div class="container highlight-content">
+                <div class="highlight-text">
+                    <h2 class="highlight-title">Quitação 100% Legalizada e com Garantia!</h2>
+                    <p class="highlight-subtitle">Conte com um time especializado e atendimento humanizado em todas as etapas.</p>
+                </div>
+                <div class="highlight-badge">
+                    <div class="badge">
+                        <span class="badge-text">Atendimento Especializado</span>
+                        <span class="badge-star">★</span>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Company Info -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title text-center mb-4"><i class="fas fa-building me-2"></i>Informações da
-                                Empresa</h4>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <p><strong>Razão Social:</strong> COLEFAR LTDA</p>
-                                    <p><strong>CNPJ:</strong> 04.962.103/0001-93</p>
-                                    <p><strong>Data de Abertura:</strong> 26/09/2024</p>
-                                    <p><strong>Porte:</strong> Microempreendedor Individual (MEI)</p>
-                                </div>
-                                <div class="col-md-6">
-                                    <p><strong>Natureza Jurídica:</strong> Empresário (Individual)</p>
-                                    <p><strong>Capital Social:</strong> R$ 100,00</p>
-                                    <p><strong>Situação:</strong> Ativa</p>
-                                    <p><strong>Atividade Principal:</strong> Serviços de despachante veicular</p>
-                                </div>
-                            </div>
+        <!-- Quick Questions -->
+        <section class="quick-questions-section">
+            <div class="container">
+                <h2 class="section-title">Perguntas Rápidas</h2>
+                <div class="questions-grid">
+                    <div class="question-card">
+                        <div class="question-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                <path d="M12 17h.01"/>
+                            </svg>
                         </div>
+                        <h3 class="question-title">Posso quitar financiamentos atrasados?</h3>
+                        <p class="question-description">Sim, analisamos seu caso e negociamos diretamente com as financeiras e bancos para facilitar sua quitação.</p>
+                    </div>
+                    <div class="question-card">
+                        <div class="question-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                        </div>
+                        <h3 class="question-title">É possível renegociar parcelas?</h3>
+                        <p class="question-description">Oferecemos alternativas para renegociação, ajustando condições para cada perfil.</p>
+                    </div>
+                    <div class="question-card">
+                        <div class="question-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"/>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                            </svg>
+                        </div>
+                        <h3 class="question-title">Consigo desconto na dívida?</h3>
+                        <p class="question-description">Na maioria dos casos! Seu histórico é avaliado para buscar as melhores condições.</p>
+                    </div>
+                    <div class="question-card">
+                        <div class="question-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
+                                <rect x="2" y="9" width="20" height="12" rx="2" ry="2"/>
+                                <circle cx="12" cy="15" r="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="question-title">O processo é seguro?</h3>
+                        <p class="question-description">Total transparência: tudo documentado em contrato, sem surpresas.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials -->
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">O que dizem nossos clientes</h2>
-                <p class="lead text-muted">Depoimentos de quem já utilizou nossos serviços</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 p-3 testemonial-card">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                            </div>
-                            <p class="card-text">"Serviço excelente! Fiz a transferência do meu carro e foi tudo muito
-                                rápido, sem nenhum problema. Super recomendo!"</p>
-                            <div class="d-flex align-items-center mt-3">
-                                <i class="fas fa-user-circle fa-2x me-3 text-secondary"></i>
-                                <div>
-                                    <h6 class="mb-0">Carlos Alberto</h6>
-                                    <small class="text-muted">Itatiba/SP</small>
-                                </div>
-                            </div>
+        <!-- Differentials -->
+        <section class="differentials-section">
+            <div class="container">
+                <h2 class="section-title">Por que escolher a Quitação Veicular?</h2>
+                <div class="differentials-grid">
+                    <div class="differential-card">
+                        <div class="differential-icon">
+                            <svg class="icon accent-color" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                                <path d="M13 12h6"/>
+                                <path d="M11 12H5"/>
+                            </svg>
                         </div>
+                        <h3 class="differential-title">100% Segurança Jurídica</h3>
+                        <p class="differential-description">Todo o processo legalizado, com acompanhamento especializado e garantia documental.</p>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 p-3 testemonial-card">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                            </div>
-                            <p class="card-text">"Atendimento impecável! Resolveram um problema de documentação que eu
-                                estava há meses tentando resolver. Muito obrigada!"</p>
-                            <div class="d-flex align-items-center mt-3">
-                                <i class="fas fa-user-circle fa-2x me-3 text-secondary"></i>
-                                <div>
-                                    <h6 class="mb-0">Mariana Santos</h6>
-                                    <small class="text-muted">Jundiaí/SP</small>
-                                </div>
-                            </div>
+                    <div class="differential-card">
+                        <div class="differential-icon">
+                            <svg class="icon accent-color" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 9V5a3 3 0 0 0-6 0v4"/>
+                                <rect x="2" y="9" width="20" height="12" rx="2" ry="2"/>
+                                <circle cx="12" cy="15" r="1"/>
+                            </svg>
                         </div>
+                        <h3 class="differential-title">Avaliação sem custo</h3>
+                        <p class="differential-description">Faça sua análise gratuitamente, sem compromisso. Transparência total!</p>
                     </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 p-3 testemonial-card">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star text-warning"></i>
-                                <i class="fas fa-star-half-alt text-warning"></i>
-                            </div>
-                            <p class="card-text">"Comprei um carro usado e a COLEFAR LTDA cuidou de toda a documentação.
-                                Fiquei tranquilo sabendo que estava tudo sendo feito corretamente."</p>
-                            <div class="d-flex align-items-center mt-3">
-                                <i class="fas fa-user-circle fa-2x me-3 text-secondary"></i>
-                                <div>
-                                    <h6 class="mb-0">Roberto Ferreira</h6>
-                                    <small class="text-muted">Valinhos/SP</small>
-                                </div>
-                            </div>
+                    <div class="differential-card">
+                        <div class="differential-icon">
+                            <svg class="icon accent-color" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
                         </div>
+                        <h3 class="differential-title">Satisfação comprovada</h3>
+                        <p class="differential-description">Mais de 4.000 clientes atendidos e alta taxa de aprovação. Seu caso aqui é prioridade.</p>
+                    </div>
+                    <div class="differential-card">
+                        <div class="differential-icon">
+                            <svg class="icon accent-color" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="17,1 21,5 17,9"/>
+                                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                                <polyline points="7,23 3,19 7,15"/>
+                                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                            </svg>
+                        </div>
+                        <h3 class="differential-title">Atendimento Humanizado</h3>
+                        <p class="differential-description">Equipe preparada e ágil, pronta para esclarecer dúvidas e dar pleno suporte.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light-gray">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Entre em Contato</h2>
-                <p class="lead text-muted">Estamos à disposição para tirar suas dúvidas</p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <div class="card h-100">
-                        <div class="card-body p-4">
-                            <h4 class="card-title mb-4"><i class="fas fa-map-marker-alt me-2"></i>Localização</h4>
-
-                            <div class="contact-info">
-                                <div class="d-flex align-items-start mb-3">
-                                    <i class="fas fa-home contact-icon mt-1"></i>
-                                    <div>
-                                        <h5>Endereço</h5>
-                                        <p class="mb-0">
-                                            R GOV MILTON CAMPOS, 1154 – Bairro TUPI B <br>
-                                            Belo Horizonte – Minas Gerais <br>
-                                            CEP: 31844-440
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-start mb-3">
-                                    <i class="fas fa-phone-alt contact-icon mt-1"></i>
-                                    <div>
-                                        <h5>Telefone</h5>
-                                        <p class="mb-0">(11) 97587-7100</p>
-                                        <a href="tel:11975877100" class="btn btn-sm btn-primary mt-2">
-                                            <i class="fas fa-phone me-1"></i>Ligar Agora
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-start mb-3">
-                                    <i class="fas fa-envelope contact-icon mt-1"></i>
-                                    <div>
-                                        <h5>E-mail</h5>
-                                        <p class="mb-0">elainedefreitassilva1975@gmail.com</p>
-                                        <a href="@"
-                                            class="btn btn-sm btn-primary mt-2">
-                                            <i class="fas fa-envelope me-1"></i>Enviar E-mail
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-start">
-                                    <i class="fab fa-whatsapp contact-icon mt-1"></i>
-                                    <div>
-                                        <h5>WhatsApp</h5>
-                                        <p class="mb-0">(11) 97587-7100</p>
-                                        <a href="https://wa.me/5511975877100" target="_blank"
-                                            class="btn btn-sm btn-success mt-2">
-                                            <i class="fab fa-whatsapp me-1"></i>Enviar Mensagem
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-4">
-                                <h5 class="mb-3">Redes Sociais</h5>
-                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="card h-100">
-                        <div class="card-body p-4">
-                            <h4 class="card-title mb-4"><i class="fas fa-paper-plane me-2"></i>Envie uma Mensagem</h4>
-                            <form>
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">Telefone</label>
-                                    <input type="tel" class="form-control" id="phone">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">Assunto</label>
-                                    <select class="form-select" id="subject">
-                                        <option selected>Selecione um assunto</option>
-                                        <option>Licenciamento</option>
-                                        <option>Transferência</option>
-                                        <option>Multas</option>
-                                        <option>CNH</option>
-                                        <option>Outro</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Mensagem</label>
-                                    <textarea class="form-control" id="message" rows="4" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fas fa-paper-plane me-1"></i>Enviar Mensagem
-                                </button>
-                            </form>
-                        </div>
-                    </div>
+        <!-- Partners -->
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="section-title">Nossos Parceiros</h2>
+                <div class="partners-grid">
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Square-blue.svg" alt="Logo Banco Alpha" class="partner-logo">
+                        <span class="partner-name">Banco Alpha</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Square-red.svg" alt="Logo Financeira Beta" class="partner-logo">
+                        <span class="partner-name">Financeira Beta</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Square-green.svg" alt="Logo Associação Gamma" class="partner-logo">
+                        <span class="partner-name">Associação Gamma</span>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="partner-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Square-yellow.svg" alt="Logo Instituto Delta" class="partner-logo">
+                        <span class="partner-name">Instituto Delta</span>
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <div class="row mt-4">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body p-0">
-                            <div class="map-container">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.789434404438!2d-46.8560729246876!3d-22.88699107925846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b8b6b9c5c5c5%3A0x9c8b8b6b9c5c5c5!2sAvenida%20Guilherme%20Soave%2C%201226%20-%20Vivendas%20do%20Engenho%20D%27%C3%A1gua%2C%20Itatiba%20-%20SP%2C%2013252-400!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
-                                    width="100%" height="100%" style="border:0;" allowfullscreen=""
-                                    loading="lazy"></iframe>
-                            </div>
+        <!-- Testimonials -->
+        <section id="depoimentos" class="testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Depoimentos de Clientes</h2>
+                <div class="testimonials-container">
+                    <div class="testimonial-card" id="testimonialCard">
+                        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Carlos Eduardo" class="testimonial-image">
+                        <div class="testimonial-content">
+                            <p class="testimonial-text" id="testimonialText">"Consegui reduzir minha dívida em 50%! Atendimento nota 10."</p>
+                            <span class="testimonial-name" id="testimonialName">Carlos Eduardo</span>
                         </div>
                     </div>
+                    <button class="testimonial-nav prev" onclick="prevTestimonial()">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15,18 9,12 15,6"/>
+                        </svg>
+                    </button>
+                    <button class="testimonial-nav next" onclick="nextTestimonial()">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9,18 15,12 9,6"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="testimonial-dots" id="testimonialDots">
+                    <span class="dot active" onclick="currentTestimonial(0)"></span>
+                    <span class="dot" onclick="currentTestimonial(1)"></span>
+                    <span class="dot" onclick="currentTestimonial(2)"></span>
+                    <span class="dot" onclick="currentTestimonial(3)"></span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FAQ Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Perguntas Frequentes</h2>
-                <p class="lead text-muted">Tire suas dúvidas sobre nossos serviços</p>
-            </div>
-
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne">
-                            Quais documentos preciso para transferir um veículo?
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="container faq-container">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(0)">
+                            <span>O que é quitação veicular?</span>
+                            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"/>
+                            </svg>
                         </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Para transferência de veículo são necessários: documento de identificação do comprador e
-                            vendedor, CPF, comprovante de residência, CRV e CRLV do veículo, documento de quitação de
-                            débitos (se houver financiamento) e o contrato de compra e venda devidamente assinado.
+                        <div class="faq-answer">
+                            <p>É o processo onde uma dívida do veículo é negociada e paga, liberando o veículo de restrições e gravames.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo">
-                            Quanto tempo demora o processo de transferência?
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(1)">
+                            <span>Como sei se estou apto a quitar?</span>
+                            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"/>
+                            </svg>
                         </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            O prazo médio para conclusão de uma transferência é de 15 a 30 dias úteis, podendo variar
-                            conforme a demanda do Detran e se todos os documentos estiverem em ordem.
+                        <div class="faq-answer">
+                            <p>Basta ter um financiamento ativo ou pendências no veículo para que façamos a análise e proposta.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree">
-                            Posso licenciar meu veículo com multas pendentes?
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(2)">
+                            <span>Quais documentos preciso?</span>
+                            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"/>
+                            </svg>
                         </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sim, é possível licenciar o veículo mesmo com multas pendentes, porém o valor das multas
-                            será somado ao valor do licenciamento. Recomendamos regularizar todas as pendências para
-                            evitar problemas futuros.
+                        <div class="faq-answer">
+                            <p>RG, CPF, comprovante de residência e os documentos do veículo já são suficientes para iniciarmos.</p>
                         </div>
                     </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFour">
-                            Como faço para renovar minha CNH?
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(3)">
+                            <span>Em quanto tempo o processo é finalizado?</span>
+                            <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"/>
+                            </svg>
                         </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Para renovação da CNH é necessário agendar no Detran, realizar exames médico e psicológico,
-                            fazer o curso de reciclagem (se necessário) e pagar as taxas. Podemos auxiliar em todo o
-                            processo, agilizando cada etapa.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseFive">
-                            Vocês emitem segunda via do CRV e CRLV?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-                        data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Sim, emitimos segunda via de todos os documentos veiculares. Para isso, é necessário
-                            apresentar documento de identificação e em alguns casos, fazer uma declaração de perda ou
-                            roubo.
+                        <div class="faq-answer">
+                            <p>Após a negociação e pagamento, a quitação e regularização documental costumam ser rápidas, podendo variar conforme o banco/financeira.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Call to Action -->
-    <section class="py-5 bg-primary text-white">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-4">Precisa de ajuda com seus documentos veiculares?</h2>
-            <p class="lead mb-5">Entre em contato agora mesmo e deixe que cuidamos de tudo para você!</p>
-            <a href="https://wa.me/5511975877100" target="_blank" class="btn btn-light btn-lg px-4 me-2">
-                <i class="fab fa-whatsapp me-2"></i>WhatsApp
-            </a>
-            <a href="tel:11975877100" class="btn btn-outline-light btn-lg px-4">
-                <i class="fas fa-phone-alt me-2"></i>Ligar Agora
-            </a>
-        </div>
-    </section>
+        <!-- About Company -->
+        <section id="sobre" class="about-section">
+            <div class="container about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Equipe Quitação Veicular" class="about-img">
+                </div>
+                <div class="about-text">
+                    <h2 class="about-title">Sobre a Quitação Veicular</h2>
+                    <p class="about-description">
+                        Há mais de 10 anos no mercado, somos referência nacional em soluções para quitação de veículos, atuando com transparência, ética e excelência em resultados para nossos clientes.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <h3 class="value-title">Missão</h3>
+                            <p class="value-text">Facilitar a vida do cliente, oferecendo o melhor em negociação de dívidas veiculares.</p>
+                        </div>
+                        <div class="value-item">
+                            <h3 class="value-title">Visão</h3>
+                            <p class="value-text">Ser reconhecidos como a empresa número 1 em quitação veicular do Brasil.</p>
+                        </div>
+                        <div class="value-item">
+                            <h3 class="value-title">Valores</h3>
+                            <p class="value-text">Ética, transparência, excelência e respeito ao cliente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="py-4">
+    <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3"><i class="fas fa-car me-2"></i>COLEFAR LTDA</h5>
-                    <p>Serviços de despachante veicular com agilidade, segurança e transparência em Itatiba e região.
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">Quitação Veicular</span>
+                    <p class="footer-description">
+                        Especialistas em negociação de dívidas e quitação de veículos com segurança, transparência e ética.
                     </p>
-                </div>
-
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-3">Links Rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#home" class="text-white">Início</a></li>
-                        <li class="mb-2"><a href="#services" class="text-white">Serviços</a></li>
-                        <li class="mb-2"><a href="#about" class="text-white">Sobre Nós</a></li>
-                        <li class="mb-2"><a href="#contact" class="text-white">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-md-4">
-                    <h5 class="mb-3">Horário de Atendimento</h5>
-                    <p>Segunda a Sexta: 8h às 18h<br>
-                        Sábado: 8h às 12h<br>
-                        Domingo: Fechado</p>
-
-                    <div class="mt-3">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <div class="social-links">
+                        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Contato
+                    </h4>
+                    <div class="contact-info">
+                        <span class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            contato@quitacaoveicular.com.br
+                        </span>
+                        <span class="contact-item">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">+55 11 99999-9999</a>
+                        </span>
+                        <span class="contact-item">
+                            Rua Exemplo, 123, São Paulo - SP
+                        </span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Navegação</h4>
+                    <nav class="footer-nav">
+                        <a href="#inicio" class="footer-link">Início</a>
+                        <a href="#beneficios" class="footer-link">Benefícios</a>
+                        <a href="#como-funciona" class="footer-link">Como Funciona</a>
+                        <a href="#depoimentos" class="footer-link">Depoimentos</a>
+                        <a href="#contato" class="footer-link">Contato</a>
+                        <a href="#" class="footer-link">Termos de uso</a>
+                        <a href="#" class="footer-link">Política de Privacidade</a>
+                    </nav>
+                </div>
             </div>
-
-            <hr class="my-4 bg-light">
-
-            <div class="row">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <p class="mb-0">&copy; 2024 COLEFAR LTDA. Todos os direitos reservados.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">CNPJ: 04.962.103/0001-93</p>
-                </div>
+            <div class="footer-bottom">
+                <span class="copyright">© 2024 Quitação Veicular. Todos os direitos reservados.</span>
+                <a href="#inicio" class="back-to-top">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="19" x2="12" y2="5"/>
+                        <polyline points="5,12 12,5 19,12"/>
+                    </svg>
+                    Voltar ao topo
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20Hyundai!" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span>Olá, Hyundai!</span>
+    </a>
 
+    <script src="script.js"></script>
+</body>
 </html>
